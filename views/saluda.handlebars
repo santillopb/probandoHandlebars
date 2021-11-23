@@ -1,5 +1,5 @@
 <ul>
-    {{#each datos as |elemento|}}
-        <li>Nombre: {{elemento.nombre}} - Apellido: {{elemento.apellido}}</li>
-    {{/each}}
+   {{#if datos}}
+    <li>Nombre: {{datos.nombre}} - Apellido: {{datos.apellido}}</li>
+    {{/if}}
 </ul>
