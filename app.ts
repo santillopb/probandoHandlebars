@@ -5,6 +5,8 @@ const hbs = expressHandlebars.create({defaultLayout: "main"});
 
 const path = require('path');
 
+const router = require("../routes/routes.js");
+
 const app:express.Application = express();
 
 app.engine('handlebars', hbs.engine);
@@ -15,11 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static(path.join( __dirname, '..', 'public')));
 
-
-app.post("/alta", (req: express.Request, res:express.Response):void=>{
-    res.render("saluda.handlebars", {datos:{nombre: req.body.nombre, apellido: req.body.apellido}})
-})
-
+app.use("/", router);
 
 app.listen(3000, ():void=>{
     console.log('App escuchando el puerto 3000...')
