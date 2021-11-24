@@ -1,10 +1,7 @@
 import express from 'express';
-
 const expressHandlebars = require('express-handlebars');
 const hbs = expressHandlebars.create({defaultLayout: "main"});
-
 const path = require('path');
-
 const router = require("../routes/routes.js");
 
 const app:express.Application = express();

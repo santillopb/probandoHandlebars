@@ -1,5 +1,5 @@
 <ul>
-   {{#if datos}}
-    <li>Nombre: {{datos.nombre}} - Apellido: {{datos.apellido}}</li>
-    {{/if}}
+   {{#each datos as |registro|}}
+    <li>Nombre: {{registro.nombre}} - Primer apellido: {{registro.primer_apellido}} - Segundo apellido: {{registro.segundo_apellido}}</li>
+    {{/each}}
 </ul>
